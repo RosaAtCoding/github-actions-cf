@@ -3,7 +3,7 @@ name: Hola Mundo on pr
 on:
     push:
         branches:
-            - pr
+            - test
 
 jobs:
     hola:
