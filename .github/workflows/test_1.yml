@@ -16,3 +16,9 @@ jobs:
         steps:
             - name: LS
               run: ls -al
+            
+            - name: WhoAmI
+              run: whoami
+            
+            - name: PWD
+              run: pwd    
