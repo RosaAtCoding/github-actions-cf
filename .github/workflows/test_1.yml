@@ -15,6 +15,9 @@ jobs:
             
             - name: Set text
               run: echo "Hola Mundo" >> hola.txt
+
+            - name: ls
+              run: ls -ls
             
             - name: Read file
               run: cat hola.txt
