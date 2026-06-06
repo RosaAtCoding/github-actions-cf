@@ -1,9 +1,15 @@
-name: Hola Mundo on pr
+name: Hola Mundo
+
+# on: [push, pull_request]
 
 on:
     push:
         branches:
-            - pr
+            - main
+
+    pull_request:
+        branches:
+            - main
 
 jobs:
     hola:
@@ -28,12 +34,9 @@ jobs:
     other:
         runs-on: ubuntu-latest
 
-        needs: [hola]  # nombre del job, se ejecutan secuencialmente
+        needs: hola  # nombre del job, se ejecutan secuencialmente
 
         steps:
-            - name: Checkout
-              uses: actions/checkout@v6
-
             - name: LS
               run: ls -al
             
