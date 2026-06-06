@@ -25,6 +25,8 @@ jobs:
     other:
         runs-on: ubuntu-latest
 
+        needs: hola  # nombre del job, se ejecutan secuencialmente
+
         steps:
             - name: LS
               run: ls -al
