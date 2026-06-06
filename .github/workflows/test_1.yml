@@ -1,0 +1,44 @@
+name: Hola Mundo
+
+on:
+    push:
+        branches:
+            - pr
+
+jobs:
+    hola:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Hola Mundo
+              run: echo "Hola Mundo!"
+
+            - name: Touch file
+              run: touch hola.txt
+            
+            - name: Set text
+              run: echo "Hola Mundo" >> hola.txt
+
+            - name: ls
+              run: ls -ls
+            
+            - name: Read file
+              run: cat hola.txt
+
+    other:
+        runs-on: ubuntu-latest
+
+        needs: [hola]  # nombre del job, se ejecutan secuencialmente
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v6
+
+            - name: LS
+              run: ls -al
+            
+            - name: WhoAmI
+              run: whoami
+            
+            - name: PWD
+              run: pwd    
